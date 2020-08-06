@@ -18,3 +18,13 @@ Route::get('/', 'HomeController@index');
 Route::get('register', 'AutController@index');
 
 Route::get('welcome', 'AutController@welcomepage');
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+
+
+Route::get('/datatable', function () {
+    return view('adminlte.datatable');
+});
