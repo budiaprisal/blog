@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKomentarPertanyaanTable extends Migration
+class CreateLikeDislikePertanyaanTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,12 @@ class CreateKomentarPertanyaanTable extends Migration
      */
     public function up()
     {
-        Schema::create('komentar_pertanyaan', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->date('tanggal_dibuat');
-
+        Schema::create('like_dislike_pertanyaan', function (Blueprint $table) {
             $table->unsignedBigInteger('pertanyaan_id');
             $table->foreign('pertanyaan_id')->references('id')->on('pertanyaan');
             $table->unsignedBigInteger('profil_id');
             $table->foreign('profil_id')->references('id')->on('profil');
+            $table->integer('poin');
         });
     }
 
@@ -31,6 +29,12 @@ class CreateKomentarPertanyaanTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('komentar_pertanyaan');
+        Schema::dropIfExists('like_dislike_pertanyaan');
+        // Schema::table('like_dislike_pertanyaan', function (Blueprint $table) {
+        //     $table->dropForeign(['profil_id']);
+        //     $table->dropColumn(['profil_id']);
+        //     $table->dropForeign(['pertanyaan_id']);
+        //     $table->dropColumn(['pertanyaan_id']);
+        // });
     }
 }

@@ -30,5 +30,11 @@ class CreateLikeDislikeJawabanTable extends Migration
     public function down()
     {
         Schema::dropIfExists('like_dislike_jawaban');
+        // Schema::table('like_dislike_jawaban', function (Blueprint $table) {
+        //     $table->dropForeign(['profil_id']);
+        //     $table->dropColumn(['profil_id']);
+        //     $table->dropForeign(['jawaban_id']);
+        //     $table->dropColumn(['jawaban_id']);
+        // });
     }
 }

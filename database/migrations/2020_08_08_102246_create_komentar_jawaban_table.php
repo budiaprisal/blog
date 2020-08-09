@@ -34,5 +34,11 @@ class CreateKomentarJawabanTable extends Migration
     public function down()
     {
         Schema::dropIfExists('komentar_jawaban');
+        // Schema::table('komentar_jawaban', function (Blueprint $table) {
+        //     $table->dropForeign(['profil_id']);
+        //     $table->dropColumn(['profil_id']);
+        //     $table->dropForeign(['jawaban_id']);
+        //     $table->dropColumn(['jawaban_id']);
+        // });
     }
 }
