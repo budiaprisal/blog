@@ -2,7 +2,7 @@
 @section('content')
 
     <div class="card-body">
-        <table id="example1" class="table table-bordered table-primary">
+        <table class="table table-bordered ">
         <thead>
             <tr align="center">
                 <th>Judul</th>
